@@ -1,7 +1,7 @@
 terraform {
   required_version = ">= 1.0.11"
   backend "gcs" {
-    bucket = "terraform-bucket-task8-tf"
+    bucket = "terraform-bucket-task8"
     prefix = "dev"
   }
   required_providers {
