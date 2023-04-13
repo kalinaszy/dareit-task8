@@ -53,7 +53,7 @@ resource "google_storage_bucket" "static-site" {
   }
 }
 
-resource "google_storage_bucket_object" "static-website" {
+resource "google_storage_bucket_object" "static-site" {
   name   = "index.html"
   source = "website/index.html"
   bucket = google_storage_bucket.static-site.name
@@ -61,6 +61,6 @@ resource "google_storage_bucket_object" "static-website" {
 
 resource "google_storage_bucket_object" "picture" {
   name   = "cats.jpg"
-  source = "./cats.jpg"
+  source = "website/cats.jpg"
   bucket = google_storage_bucket.static-site.name
 }
