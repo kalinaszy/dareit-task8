@@ -62,5 +62,5 @@ resource "google_storage_bucket_object" "static-site" {
 resource "google_storage_bucket_object" "picture" {
   name   = "cats.jpg"
   source = "website/cats.jpg"
-  bucket = google_storage_bucket.static-site.name
+  bucket = google_storage_bucket.static-website-task8.name
 }
