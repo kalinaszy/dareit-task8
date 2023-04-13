@@ -3,11 +3,11 @@ resource "google_storage_bucket" "dareit-tf-8" {
   location = "us-central1"
 }
 
-resource "google_storage_default_object_access_control" "website_read" {
-  bucket = google_storage_bucket.dareit-tf-8.name
-  role   = "READER"
-  entity = "allUsers"
-}
+# resource "google_storage_default_object_access_control" "website_read" {
+#   bucket = google_storage_bucket.dareit-tf-8.name
+#   role   = "READER"
+#   entity = "allUsers"
+# }
 
 resource "google_compute_instance" "dareit-vm" {
   name         = "dareit-vm-8"
@@ -61,6 +61,6 @@ resource "google_storage_bucket_object" "static-site" {
 
 resource "google_storage_bucket_object" "picture" {
   name   = "cats.jpg"
-  source = "website/cats.jpg"
+  source = "./website/cats.jpg"
   bucket = google_storage_bucket.static-site.name
 }
