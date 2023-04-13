@@ -9,6 +9,7 @@ resource "google_storage_bucket" "dareit-tf-8" {
 #   entity = "allUsers"
 # }
 
+
 resource "google_compute_instance" "dareit-vm" {
   name         = "dareit-vm-8"
   machine_type = "e2-medium"
