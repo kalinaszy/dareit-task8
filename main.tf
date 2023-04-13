@@ -3,11 +3,11 @@ resource "google_storage_bucket" "dareit-tf-8" {
   location = "us-central1"
 }
 
-# resource "google_storage_default_object_access_control" "website_read" {
-#   bucket = google_storage_bucket.website.name
-#   role   = "READER"
-#   entity = "allUsers"
-# }
+resource "google_storage_default_object_access_control" "website_read" {
+  bucket = google_storage_bucket.website.name
+  role   = "READER"
+  entity = "allUsers"
+}
 
 resource "google_compute_instance" "dareit-vm" {
   name         = "dareit-vm-8"
@@ -35,7 +35,7 @@ resource "google_compute_instance" "dareit-vm" {
 }
 
 resource "google_storage_bucket" "static-site" {
-  name          = "static website task 8"
+  name          = "static-website-task8"
   location      = "US"
   force_destroy = true
 
